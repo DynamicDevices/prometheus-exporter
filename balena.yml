@@ -1,0 +1,18 @@
+name: browser
+description: >-
+  a containerised implementation of the Prometheus device metrics node_exporter
+version: 0.0.1
+type: sw.application
+assets:
+  repository:
+    type: blob.asset
+    data:
+      url: 'https://github.com/dynamicdevices/balena-prometheus-exporter'
+  logo:
+    type: blob.asset
+    data:
+      url: 'https://raw.githubusercontent.com/balena-prometheus-exporter/browser/master/logo.png'
+data:
+  defaultDeviceType: raspberrypi4-64
+  supportedDeviceTypes:
+    - raspberrypi4-64

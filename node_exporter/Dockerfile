@@ -1,7 +1,5 @@
 
-FROM balenalib/raspberrypi4-64-golang
-
-RUN install_packages npm
+FROM balenablocks/browser
 
 RUN mkdir -p $GOPATH/src/github.com/node_exporter
 RUN cd $GOPATH/src/github.com/node_exporter
