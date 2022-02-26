@@ -1,9 +1,14 @@
 
 FROM balenablocks/browser
 
-RUN mkdir -p $GOPATH/src/github.com/node_exporter
-RUN cd $GOPATH/src/github.com/node_exporter
-RUN git clone https://github.com/prometheus/node_exporter.git
-RUN cd node_exporter && ( make || : )
+#RUN install_packages git build-essential
+#RUN install_packages golang
 
-CMD cd node_exporter && ./node_exporter
+#RUN mkdir -p $GOPATH/src/github.com/node_exporter
+#RUN cd $GOPATH/src/github.com/node_exporter
+#RUN git clone https://github.com/prometheus/node_exporter.git
+#RUN cd node_exporter && ( make || : )
+
+RUN install_packages prometheus-node-exporter
+
+CMD node_exporter
