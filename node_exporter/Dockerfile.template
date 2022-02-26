@@ -1,0 +1,7 @@
+ARG BALENA_ARCH=%%BALENA_ARCH%%
+
+FROM balenalib/$BALENA_ARCH-alpine:3.14
+
+RUN install_packages prometheus-node-exporter
+
+CMD node_exporter
