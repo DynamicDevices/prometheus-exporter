@@ -1,0 +1,6 @@
+version: '2'
+services:
+  node_exporter:
+    build: ./node_exporter
+    ports:
+      - "9100:9100"
