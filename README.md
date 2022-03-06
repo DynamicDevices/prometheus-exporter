@@ -14,12 +14,28 @@ Background on what is exported by the `node-exporter` by default is `here`
 
 Add the following to a `docker-compose.yml` for your fleet. At this time we expose the `node-exporter` on port 80 i.e. the public URL.
 
+**NOTE:** I couldn't get this working for the raspberrypi4-64 which is what I am testing here. It appears to be related to an issue with Balena `--platform` parsing and I had to implement the fix shown [here](https://github.com/balena-io/balena-cli/issues/1408). See below.
+
 ```
 version: '2'
 
 services:
   node_exporter:
     image: dynamicdevices/balenablock-node-exporter
+    restart: always
+    privileged: false
+    ports:
+      - '80:9100'
+```
+
+For the RPi-64 I had to pin the image to the current latest arm64 SHA. Note that this may be out of date in future. e.g.
+
+```
+version: '2'
+
+services:
+  node_exporter:
+    image: dynamicdevices/balenablock-node-exporter@sha256:9c03ad3c3c7b6201c0f5a644d5d7023e8ecb42767c55945082807e16e4eb60de
     restart: always
     privileged: false
     ports:
