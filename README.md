@@ -81,3 +81,23 @@ The dashboard I used is [here](https://grafana.com/grafana/dashboards/1860)
 
 ![Dashboard Image](https://grafana.com/api/dashboards/1860/images/7994/image)
 
+# Rebuilding the Docker image and pushing to your own Docker registry
+
+There is a [build-images.sh](https://github.com/DynamicDevices/balena-prometheus-exporter/blob/main/build-images.sh) script which I modified from the `pulse` block.
+
+You'll need to change the Docker repo to your own and you should then be able to use this to build and upload the image(s).
+
+I had problems as my installation of `docker buildx` didn't have support for ARM64 building and I had to look through the information [here](https://community.arm.com/arm-community-blogs/b/tools-software-ides-blog/posts/getting-started-with-docker-for-arm-on-linux)
+
+Specifically I needed to register Arm executables to run on x64 machines:
+
+```
+docker run --rm --privileged docker/binfmt:820fdd95a9972a5308930a2bdfb8573dd4447ad3
+```
+
+To verify the qemu handlers are registered properly run:
+
+```
+cat /proc/sys/fs/binfmt_misc/qemu-aarch64
+```
+
