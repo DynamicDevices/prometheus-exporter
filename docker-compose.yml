@@ -3,4 +3,4 @@ services:
   node_exporter:
     build: ./node_exporter
     ports:
-      - "9100:9100"
+      - "80:9100"
