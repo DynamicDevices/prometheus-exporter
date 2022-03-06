@@ -2,10 +2,6 @@ ARG BALENA_ARCH=%%BALENA_ARCH%%
 
 FROM balenalib/$BALENA_ARCH-alpine:3.14
 
-RUN [ "cross-build-start" ]
-
 RUN install_packages prometheus-node-exporter
-
-RUN [ "cross-build-end" ]
 
 CMD node_exporter
