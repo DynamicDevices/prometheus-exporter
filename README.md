@@ -19,7 +19,7 @@ version: '2'
 
 services:
   node_exporter:
-    image: dynamicdevices/balena-prometheus-exporter
+    image: dynamicdevices/prometheus-node-exporter
     restart: always
     privileged: false
     ports:
