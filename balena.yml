@@ -1,4 +1,4 @@
-name: browser
+name: balena-prometheus-exporter
 description: >-
   a containerised implementation of the Prometheus device metrics node_exporter
 version: 0.0.1
