@@ -42,7 +42,11 @@ services:
       - '80:9100'
 ```
 
-With this Fleet configuration deployed you should be able browse to your public endpoint (on the balena device dashboard) and see a list of key value pairs of device metrics)
+With this Fleet configuration deployed you should be able browse to your public endpoint (:80 on the balena device dashboard) and see a list of key value pairs of device metrics)
+
+e.g. `https://your-device-id.balena-devices.com/metrics`
+
+![image](https://user-images.githubusercontent.com/1537834/156930694-47536493-83a1-4fb8-b167-a2e5c36ddd9d.png)
 
 # Prometheus configuration
 
@@ -57,7 +61,13 @@ For example append something of this form to the `/etc/prometheus/prometheus.yml
       - targets: ['name-of-your-public-endpoint.balena-devices.com']
 ```
 
+Note there is no "https://" at the start or "/metrics" at the end of the target value.
+
 Then restart. You should be able to browse to your Prometheus web interface on port `:9090` and check the targets. You should see that your `balena-node` is online.
+
+You should seem something like this
+
+![image](https://user-images.githubusercontent.com/1537834/156930877-adf7a7f9-e539-429b-a41b-b3fc99754a83.png)
 
 # Grafana configuration
 
