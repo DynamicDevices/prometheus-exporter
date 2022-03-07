@@ -83,7 +83,7 @@ The dashboard I used is [here](https://grafana.com/grafana/dashboards/1860)
 
 # Rebuilding the Docker image and pushing to your own Docker registry
 
-There is a [build-images.sh](https://github.com/DynamicDevices/balena-prometheus-exporter/blob/main/build-images.sh) script which I modified from the `pulse` block.
+There is a [build-images.sh](https://github.com/DynamicDevices/prometheus-exporter/blob/main/build-images.sh) script which I modified from the `pulse` block.
 
 You'll need to change the Docker repo to your own and you should then be able to use this to build and upload the image(s).
 

@@ -1,17 +1,17 @@
-name: balena-prometheus-exporter
+name: prometheus-exporter
 description: >-
-  a containerised implementation of the Prometheus device metrics node_exporter
+  a block providing Prometheus device metrics 'node_exporter' information
 version: 0.0.1
 type: sw.application
 assets:
   repository:
     type: blob.asset
     data:
-      url: 'https://github.com/dynamicdevices/balena-prometheus-exporter'
+      url: 'https://github.com/dynamicdevices/prometheus-exporter'
   logo:
     type: blob.asset
     data:
-      url: 'https://github.com/DynamicDevices/balena-prometheus-exporter/raw/main/logo.png'
+      url: 'https://github.com/DynamicDevices/prometheus-exporter/raw/main/logo.png'
 data:
   defaultDeviceType: raspberrypi4-64
   supportedDeviceTypes:
